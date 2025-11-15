@@ -1,6 +1,6 @@
 # GrantLab Cloud System
 
-AI-powered grant discovery and writing assistant for nonprofit organizations
+AI-powered grant discovery and writing assistant for Cambio Labs.  
 
 ## What This Is
 
