@@ -143,7 +143,7 @@ The code is open source under the MIT license, which means you can use it, modif
 
 ## About This Project
 
-This system was built by Abdul Basir for Cambio Labs as part of a project to make high-quality grant writing more accessible to nonprofits. Cambio Labs focuses on empowering underestimated communities through technology education, workforce development, and entrepreneurship programs. Their work with NYCHA residents, BIPOC youth and adults, and other underrepresented populations inspired the need for a grant writing tool that could maintain authentic voice while reducing costs.
+This system was built by Basir Abdul Samad for Cambio Labs as part of a project to make high-quality grant writing more accessible to nonprofits. Cambio Labs focuses on empowering underestimated communities through technology education, workforce development, and entrepreneurship programs. Their work with NYCHA residents, BIPOC youth and adults, and other underrepresented populations inspired the need for a grant writing tool that could maintain authentic voice while reducing costs.
 
 The current version is 2.1, which includes the enhanced multi-layer RAG system, voice validation, and professional formatting. Development started in early November 2025 and reached production readiness within two weeks through iterative testing and refinement.
 
