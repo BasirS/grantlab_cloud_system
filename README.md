@@ -79,6 +79,8 @@ The system also actively avoids common tells that make writing sound AI-generate
 
 Testing across multiple grant applications showed an average voice authenticity score of 95.8 out of 100, which is high enough that team members familiar with Cambio Labs' writing cannot reliably distinguish generated sections from human-written ones in blind tests.
 
+![Project Flowchart 1](figures/grantlab_cloud_system_generation_pipeline_with_quality_assurance.png)
+
 ## System Architecture
 
 The core of the system is the multi-layer RAG architecture described earlier. When you request a grant section, here is what happens behind the scenes.
@@ -90,6 +92,8 @@ All those retrieved chunks get assembled into a comprehensive context package th
 GPT-4 generates an initial draft using that context as examples rather than as text to copy verbatim. The draft goes to the voice validation system, which scores it across multiple dimensions. If the score meets the threshold, the content moves forward to formatting. If not, the system identifies specific issues, like too many buzzwords or not enough concrete data, and makes targeted revisions before trying again.
 
 The final step is professional formatting, where the text gets converted into a properly styled Word document with all the structural elements that grant reviewers expect to see.
+
+![Project Flowchart 2](figures/multi-layer_rag_architecture_for_grantlab_cloud_system.png)
 
 ## Cost Analysis
 
