@@ -36,6 +36,9 @@ This project was part of the Break Through Tech AI Studio program in collaborati
 * **99% Cost Reduction:** Annual costs were reduced from approximately $60,000 that would be spent on external grant writers down to around $150 in OpenAI API costs.
 * **Multi-Layer RAG Architecture:** A novel 6-collection vector retrieval system was implemented that provides high-precision context by organizing information into specialized categories rather than dumping everything into one database.
 
+![Multi-Layer RAG Architecture](figures/multi-layer_rag_architecture.png)
+*Figure 1: The Multi-Layer RAG architecture sorting data into specialized collections before context assembly.*
+
 ---
 
 ## Project Overview
@@ -133,10 +136,6 @@ This separation was crucial because it prevents the AI from mixing up contexts. 
 
 ### Data Insights & Analysis
 
-![Voice Score Distribution](figures/voice_score_distribution.png)
-
-*Figure 1: Distribution of Voice Scores across the testing set. The chart shows that baseline generic AI outputs scored around 70%, while the RAG-enhanced system consistently scored above 95%. This visualization can be viewed in the [repository](https://github.com/BasirS/grantlab_cloud_system/tree/main/figures).*
-
 One of the most interesting findings from the exploratory data analysis was the distribution of voice authenticity scores. When generic AI was used without any RAG system, it scored around 65-70% on voice authenticity. However, once the specialized RAG system was implemented with the voice guidelines, scores jumped to consistently above 95%.
 
 The analysis also revealed that certain phrases were critical markers of Cambio's voice. For example, they consistently use "underestimated communities" rather than "underserved communities," and they avoid corporate buzzwords like "stakeholders" or "synergy." These patterns were extracted and codified into the voice guidelines.
@@ -172,6 +171,11 @@ The complete pipeline works in several stages:
 **3. Initial Generation:** GPT-4 generates a first draft of the grant application based on the assembled context and the specific requirements of the grant opportunity.
 
 **4. Voice Validation Loop:** This is where things get interesting. A secondary AI agent scores the generated draft on a scale from 0 to 100 based on voice authenticity criteria. If the score falls below 85, the system self-corrects by identifying which voice guidelines were violated and then regenerates the content. This process can repeat up to 3 times if needed.
+
+**4. Voice Validation Loop:** This is where things get interesting... This process can repeat up to 3 times if needed.
+
+![Generation Pipeline with Quality Assurance](figures/grantlab_cloud_system_generation_pipeline.png)
+*Figure 2: The complete generation pipeline showing the feedback loop between GPT-4 and the Voice Validation Check.*
 
 The validation loop was actually one of the most important innovations. Without it, even with the RAG system, GPT-4 would sometimes drift back into generic nonprofit language, especially in longer documents.
 
@@ -301,10 +305,6 @@ The table below compares the system's performance against both human grant write
 The voice validation loop turned out to be absolutely critical to the system's success. Initial prototypes that didn't include this loop would start strong but gradually drift into generic nonprofit language, especially in longer grant applications. 
 
 The validation loop works by having a second AI agent review the generated text specifically for voice authenticity. If it detects phrases that violate the voice guidelines or notices the absence of characteristic Cambio phrases, it provides feedback that guides the regeneration. This iterative approach was what pushed the authenticity score from the 70-80% range up to 95.8%.
-
-![Results Comparison](figures/results_comparison.png)
-
-*Figure 2: Comparison of time, cost, and authenticity metrics across different approaches. Full visualizations are available in the [repository](https://github.com/BasirS/grantlab_cloud_system/tree/main/figures).*
 
 ---
 
