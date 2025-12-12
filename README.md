@@ -172,10 +172,8 @@ The complete pipeline works in several stages:
 
 **4. Voice Validation Loop:** This is where things get interesting. A secondary AI agent scores the generated draft on a scale from 0 to 100 based on voice authenticity criteria. If the score falls below 85, the system self-corrects by identifying which voice guidelines were violated and then regenerates the content. This process can repeat up to 3 times if needed.
 
-**4. Voice Validation Loop:** This is where things get interesting... This process can repeat up to 3 times if needed.
-
-![Generation Pipeline with Quality Assurance](figures/grantlab_cloud_system_generation_pipeline.png)
-*Figure 2: The complete generation pipeline showing the feedback loop between GPT-4 and the Voice Validation Check.*
+![Multi-Layer RAG Architecture](figures/multi-layer_rag_architecture.png)
+*Figure 1: The Multi-Layer RAG architecture sorting data into specialized collections before context assembly.*
 
 The validation loop was actually one of the most important innovations. Without it, even with the RAG system, GPT-4 would sometimes drift back into generic nonprofit language, especially in longer documents.
 
