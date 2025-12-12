@@ -36,8 +36,7 @@ This project was part of the Break Through Tech AI Studio program in collaborati
 * **99% Cost Reduction:** Annual costs were reduced from approximately $60,000 that would be spent on external grant writers down to around $150 in OpenAI API costs.
 * **Multi-Layer RAG Architecture:** A novel 6-collection vector retrieval system was implemented that provides high-precision context by organizing information into specialized categories rather than dumping everything into one database.
 
-![Multi-Layer RAG Architecture](figures/multi-layer_rag_architecture_for_grantlab_cloud_system.png)
-*Figure 1: The Multi-Layer RAG architecture sorting data into specialized collections before context assembly.*
+![Initial Local Model Flowchart](figures/multi-layer_rag_architecture_for_grantlab_cloud_system.png)
 
 ---
 
@@ -132,9 +131,6 @@ Several preprocessing steps were necessary to prepare the data:
 5. **Co-Design Examples:** Methodology and approach descriptions
 6. **Program Descriptions:** Detailed information about specific programs
 
-![Multi-Layer RAG Architecture](figures/multi-layer_rag_architecture_for_grantlab_cloud_system.png)
-*Figure 1: The Multi-Layer RAG architecture sorting data into specialized collections before context assembly.*
-
 This separation was crucial because it prevents the AI from mixing up contexts. For example, when the system needs statistics, it queries the Data Metrics collection specifically, which reduces the chance of hallucinating numbers.
 
 ### Data Insights & Analysis
@@ -174,9 +170,6 @@ The complete pipeline works in several stages:
 **3. Initial Generation:** GPT-4 generates a first draft of the grant application based on the assembled context and the specific requirements of the grant opportunity.
 
 **4. Voice Validation Loop:** This is where things get interesting. A secondary AI agent scores the generated draft on a scale from 0 to 100 based on voice authenticity criteria. If the score falls below 85, the system self-corrects by identifying which voice guidelines were violated and then regenerates the content. This process can repeat up to 3 times if needed.
-
-![Generation Pipeline with Quality Assurance](figures/grantlab_cloud_system_generation_pipeline_with_quality_assurance.png)
-*Figure 2: The complete generation pipeline showing the feedback loop between GPT-4 and the Voice Validation Check.*
 
 The validation loop was actually one of the most important innovations. Without it, even with the RAG system, GPT-4 would sometimes drift back into generic nonprofit language, especially in longer documents.
 
